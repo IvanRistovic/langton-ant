@@ -20,6 +20,7 @@ namespace langton_ant
 
             /* After initializing our form, we create the field */
             Field map = new Field(this, MAP_SIZE);
+
         }
 
     }

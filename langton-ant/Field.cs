@@ -23,6 +23,9 @@ namespace langton_ant
             int horizotal = CELL_SIZE;
             int vertical = CELL_SIZE;
 
+            /* For random number generating */
+            Random rand = new Random();
+
             /* Drawing field */
             for (int i = 0; i < size; i++) {
 
@@ -33,6 +36,12 @@ namespace langton_ant
                     map[i, j].Size = new Size(CELL_SIZE, CELL_SIZE);
                     map[i, j].Location = new Point(horizotal, vertical);
                     map[i, j].BorderStyle = BorderStyle.FixedSingle;
+
+                    /* Choosing color for our field randomly from two possible colors */
+                    if (rand.Next() % 2 == 0)
+                        map[i, j].BackColor = Color.Black;
+                    else
+                        map[i, j].BackColor = Color.White;
 
                     horizotal += CELL_SIZE;
 

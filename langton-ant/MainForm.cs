@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace langton_ant
@@ -13,7 +7,7 @@ namespace langton_ant
     public partial class MainForm : Form
     {
         // Size of the map
-        private const int MAP_SIZE = 20;
+        private const int MAP_SIZE = 31;
 
         // Our map
         private Field map;
@@ -34,27 +28,55 @@ namespace langton_ant
             langton = new Ant(map, MAP_SIZE, MAP_SIZE / 2, MAP_SIZE / 2);
         }
 
+
+        // Timer tick function
         private void tmrMoveTimer_Tick(object sender, EventArgs e)
         {
             // If ant movement fails, stop the animation
-            if (langton.move() == false)
-                tmrMoveTimer.Enabled = false;
+            if (langton.move() == false) {
+                stopToolStripMenuItem.PerformClick();
+                langton.resetAntPos();
+            }
         }
 
+        // File -> Start
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tmrMoveTimer.Enabled = true;
             startToolStripMenuItem.Enabled = false;
             stopToolStripMenuItem.Enabled = true;
+            fieldToolStripMenuItem.Enabled = false;
+            resetAntPositionToolStripMenuItem.Enabled = false;
         }
 
+        // File -> Stop
         private void stopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tmrMoveTimer.Enabled = false;
             startToolStripMenuItem.Enabled = true;
             stopToolStripMenuItem.Enabled = false;
+            fieldToolStripMenuItem.Enabled = true;
+            resetAntPositionToolStripMenuItem.Enabled = true;
         }
 
+        // File -> Reset Ant positon
+        private void resetAntPositionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            stopToolStripMenuItem.PerformClick();
+            langton.resetAntPos();
+        }
+
+        // File -> Choose cell color
+        private void chooseCellColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult res = cdColorChooser.ShowDialog();
+            if (res == DialogResult.OK && cdColorChooser.Color != Color.White) {
+                Field.secondaryColor = cdColorChooser.Color;
+                map.clearField();
+            }
+        }
+
+        // File -> Exit
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (System.Windows.Forms.Application.MessageLoop) {
@@ -66,16 +88,25 @@ namespace langton_ant
             }
         }
 
+        // Field -> Blank
         private void blankToolStripMenuItem_Click(object sender, EventArgs e)
         {
             map.clearField();
         }
 
-        private void randomizeToolStripMenuItem_Click(object sender, EventArgs e)
+        // Field -> Randomize -> Asymmetric
+        private void assymetricToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            map.randomizeField();
+            map.randomizeFieldAsymmetric();
         }
 
+        // Field -> Randomize -> Symmetric
+        private void symmetricToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           map.randomizeFieldSymmetric();
+        }
+
+        // About
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutForm aboutWindow = new AboutForm();

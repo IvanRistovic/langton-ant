@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
-
-namespace langton_ant
+﻿namespace langton_ant
 {
     class Ant
     {
@@ -36,30 +29,24 @@ namespace langton_ant
             // At a white square, turn 90° right, flip the color of the square, move forward
             
             if (map.getColor(xpos, ypos) == Field.primaryColor) {
-
                 if (direction == 0)
                     direction = 3;
                 else
                     direction--;
-
-                // Flipping color
-                map.setSecondary(xpos, ypos);
-
             } else {
-
                 if (direction == 3)
                     direction = 0;
                 else
                     direction++;
-
-                // Flipping color
-                map.setPrimary(xpos, ypos);
-
             }
 
-            // Moving ant
+            // Flipping color
+            map.flipColor(xpos, ypos);
+
+            // Removing ant from current location
             map.removeAnt(xpos, ypos);
 
+            // Deciding next ant location
             switch (direction) {
                 case 0:
                     if (ypos == 0)
@@ -85,9 +72,20 @@ namespace langton_ant
                     return false;
             }
 
+            // Setting ant at new location
             map.setAnt(xpos, ypos);
 
             return true;
+        }
+
+        public void resetAntPos()
+        {
+            // Removing ant from current cell
+            map.removeAnt(xpos, ypos);
+
+            // Placing ant on default location
+            xpos = ypos = mapSize / 2;
+            map.setAnt(xpos, ypos);
         }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 
@@ -17,7 +13,6 @@ namespace langton_ant
 
         private Label[,] map;
         private int mapSize;
-        
 
         public Field(Form form, int size)
         {
@@ -51,14 +46,33 @@ namespace langton_ant
                 vertical += CELL_SIZE;
             }
         }
+        
+        public void randomizeFieldSymmetric()
+        {
+            // For random number generating
+            Random rand = new Random();
 
-        public void randomizeField()
+            int limit = mapSize / 2 + 1;
+
+            for (int i = 0; i < mapSize; i++) {
+                for (int j = 0; j < limit; j++) {
+
+                    // Choosing color for our field randomly from two possible colors
+                    if (rand.Next() % 2 == 0)
+                        map[i, j].BackColor = map[i, mapSize - j - 1].BackColor = primaryColor;
+                    else
+                        map[i, j].BackColor = map[i, mapSize - j - 1].BackColor = secondaryColor;
+
+                }
+            }
+        }
+
+        public void randomizeFieldAsymmetric()
         {
             // For random number generating
             Random rand = new Random();
 
             for (int i = 0; i < mapSize; i++) {
-
                 for (int j = 0; j < mapSize; j++) {
                     
                     // Choosing color for our field randomly from two possible colors
@@ -90,14 +104,12 @@ namespace langton_ant
             map[x, y].Text = "";
         }
 
-        public void setPrimary(int x, int y)
+        public void flipColor(int x, int y)
         {
-            map[x, y].BackColor = primaryColor;
-        }
-
-        public void setSecondary(int x, int y)
-        {
-            map[x, y].BackColor = secondaryColor;
+            if (map[x, y].BackColor == Color.White)
+                map[x, y].BackColor = secondaryColor;
+            else
+                map[x, y].BackColor = primaryColor;
         }
 
         public Color getColor(int x, int y)

@@ -1,5 +1,5 @@
 # Langton's Ant
-![ss](https://raw.githubusercontent.com/IvanRistovic/langton-ant/master/screenshots/2016-12-20.PNG)
+![ss](https://raw.githubusercontent.com/IvanRistovic/langton-ant/master/screenshots/2016-12-20.png)
 
 ## Description
 Click **[here](https://en.wikipedia.org/wiki/Langton's_ant)** for more information about Langton's Ant.
@@ -14,7 +14,7 @@ For now the only way to actually run the program is to download the project and 
 When I finish, I will add an installer or something.
 
 ## Usage
-Will be added soon.
+To start the animation: File -> Start
 
 ## Known bugs
 Why the need for bugs yet? I have only just started.

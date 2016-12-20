@@ -71,6 +71,15 @@ namespace langton_ant
             }
         }
 
+        public void clearField()
+        {
+            for (int i = 0; i < mapSize; i++) {
+                for (int j = 0; j < mapSize; j++) {
+                    map[i, j].BackColor = primaryColor;
+                }
+            }
+        }
+
         public void setAnt(int x, int y)
         {
             map[x, y].Text = "+";

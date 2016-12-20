@@ -1,4 +1,5 @@
 # Langton's Ant
+![ss](https://raw.githubusercontent.com/IvanRistovic/langton-ant/master/screenshots/2016-12-20.PNG)
 
 ## Description
 Click **[here](https://en.wikipedia.org/wiki/Langton's_ant)** for more information about Langton's Ant.

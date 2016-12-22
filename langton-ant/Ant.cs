@@ -13,6 +13,7 @@
         private Field map;
         private int mapSize;
 
+
         public Ant(Field field, int fieldSize, int xstart, int ystart)
         {
             map = field;
@@ -86,6 +87,9 @@
             // Placing ant on default location
             xpos = ypos = mapSize / 2;
             map.setAntAt(xpos, ypos);
+
+            // Resetting direction
+            direction = 0;
         }
 
         public void setXpos(int x)

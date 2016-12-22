@@ -6,15 +6,20 @@ namespace langton_ant
 {
     class Field
     {
+        // Field unit size
         private const int CELL_SIZE = 10;
+
+        // Primary and secondary field colors, of which secondary can be custom
         public static Color primaryColor = Color.White;
         public static Color secondaryColor = Color.Gray;
-        private Color antColor = Color.Red;
 
+        // Ant that is currently on the field
         private Ant ant;
 
+        // Our field map
         private Label[,] map;
         private int mapSize;
+
 
         public Field(Form form, int size)
         {
@@ -30,7 +35,7 @@ namespace langton_ant
 
                 for (int j = 0; j < size; j++) {
 
-                    // Creating new label with given size
+                    // Creating new label with given size and setting attributes
                     map[i, j] = new Label();
                     map[i, j].Size = new Size(CELL_SIZE, CELL_SIZE);
                     map[i, j].Location = new Point(horizotal, vertical);
@@ -41,6 +46,8 @@ namespace langton_ant
                     map[i, j].Font = new Font("Arial", 5, FontStyle.Bold);
                     map[i, j].ForeColor = Color.Red;
                     map[i, j].Click += lblFieldLabel_Click;
+
+                    // Saving label position in map
                     map[i, j].Tag = new LabelPos(i, j);
 
                     // Advancing to next column
@@ -61,6 +68,7 @@ namespace langton_ant
             // For random number generating
             Random rand = new Random();
 
+            // We only need to draw one half, the other one is symmetric
             int limit = mapSize / 2 + 1;
 
             for (int i = 0; i < mapSize; i++) {
@@ -96,6 +104,7 @@ namespace langton_ant
 
         public void clearField()
         {
+            // Clears field by setting color to primary for each label
             for (int i = 0; i < mapSize; i++) {
                 for (int j = 0; j < mapSize; j++) {
                     map[i, j].BackColor = primaryColor;
@@ -133,11 +142,13 @@ namespace langton_ant
             LabelPos position;
 
             if (me.Button == System.Windows.Forms.MouseButtons.Left)
+                // In case of left click, we flip color
                 if (lbl.BackColor == Color.White)
                     lbl.BackColor = secondaryColor;
                 else
                     lbl.BackColor = primaryColor;
             else if (me.Button == System.Windows.Forms.MouseButtons.Right) {
+                // In case of right click, set ant at that label position
                 position = (LabelPos)lbl.Tag;
                 ant.setXpos(position.getX());
                 ant.setYpos(position.getY());

@@ -18,6 +18,7 @@ namespace langton_ant
         // Move counter
         private int moveCount = 0;
 
+
         public MainForm()
         {
             // Form initialization
@@ -124,6 +125,7 @@ namespace langton_ant
             aboutWindow.Show();
         }
 
+        // Speed Bar scroll Action
         private void tbSpeedBar_Scroll(object sender, EventArgs e)
         {
             // Changing speed by changing timer interval

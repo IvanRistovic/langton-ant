@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace langton_ant
 {
+
+    /* This class is used to save position for each label in field array */
+
     class LabelPos
     {
         private int x;

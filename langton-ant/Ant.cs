@@ -20,7 +20,7 @@
             xpos = xstart;
             ypos = ystart;
             direction = 0;
-            map.setAnt(xpos, ypos);
+            map.setAntAt(xpos, ypos);
         }
 
         public bool move()
@@ -73,7 +73,7 @@
             }
 
             // Setting ant at new location
-            map.setAnt(xpos, ypos);
+            map.setAntAt(xpos, ypos);
 
             return true;
         }
@@ -85,7 +85,21 @@
 
             // Placing ant on default location
             xpos = ypos = mapSize / 2;
-            map.setAnt(xpos, ypos);
+            map.setAntAt(xpos, ypos);
+        }
+
+        public void setXpos(int x)
+        {
+            map.removeAnt(xpos, ypos);
+            xpos = x;
+            map.setAntAt(xpos, ypos);
+        }
+
+        public void setYpos(int y)
+        {
+            map.removeAnt(xpos, ypos);
+            ypos = y;
+            map.setAntAt(xpos, ypos);
         }
     }
 }

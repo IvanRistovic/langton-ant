@@ -7,7 +7,7 @@ namespace langton_ant
     public partial class MainForm : Form
     {
         // Size of the map
-        private const int MAP_SIZE = 31;
+        private const int MAP_SIZE = 41;
 
         // Our map
         private Field map;
@@ -15,6 +15,8 @@ namespace langton_ant
         // Our hero, named langton
         private Ant langton;
 
+        // Move counter
+        private int moveCount = 0;
 
         public MainForm()
         {
@@ -26,6 +28,8 @@ namespace langton_ant
 
             // Creating ant
             langton = new Ant(map, MAP_SIZE, MAP_SIZE / 2, MAP_SIZE / 2);
+
+            map.setAnt(langton);
         }
 
 
@@ -36,7 +40,12 @@ namespace langton_ant
             if (langton.move() == false) {
                 stopToolStripMenuItem.PerformClick();
                 langton.resetAntPos();
+                return;
             }
+
+            // Otherwise, update counter
+            moveCount++;
+            tbStepBox.Text = moveCount.ToString();
         }
 
         // File -> Start
@@ -64,6 +73,7 @@ namespace langton_ant
         {
             stopToolStripMenuItem.PerformClick();
             langton.resetAntPos();
+            moveCount = 0;
         }
 
         // File -> Choose cell color
@@ -73,6 +83,7 @@ namespace langton_ant
             if (res == DialogResult.OK && cdColorChooser.Color != Color.White) {
                 Field.secondaryColor = cdColorChooser.Color;
                 map.clearField();
+                langton.resetAntPos();
             }
         }
 
@@ -111,6 +122,15 @@ namespace langton_ant
         {
             AboutForm aboutWindow = new AboutForm();
             aboutWindow.Show();
+        }
+
+        private void tbSpeedBar_Scroll(object sender, EventArgs e)
+        {
+            // Changing speed by changing timer interval
+            tmrMoveTimer.Interval = 1000 / tbSpeedBar.Value;
+
+            // Updating speed text box
+            tbSpeedBox.Text = tbSpeedBar.Value.ToString();
         }
     }
 }

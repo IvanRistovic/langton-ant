@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Ant.cs" />
     <Compile Include="Field.cs" />
+    <Compile Include="LabelPos.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

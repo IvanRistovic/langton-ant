@@ -35,7 +35,9 @@
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetAntPositionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.chooseCellColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,14 +49,19 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdColorChooser = new System.Windows.Forms.ColorDialog();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbSpeedBar = new System.Windows.Forms.TrackBar();
+            this.lblSpeedLabel = new System.Windows.Forms.Label();
+            this.lblStepLabel = new System.Windows.Forms.Label();
+            this.tbStepBox = new System.Windows.Forms.TextBox();
+            this.tbSpeedBox = new System.Windows.Forms.TextBox();
+            this.lblMPS = new System.Windows.Forms.Label();
             this.msMainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSpeedBar)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrMoveTimer
             // 
-            this.tmrMoveTimer.Interval = 10;
+            this.tmrMoveTimer.Interval = 40;
             this.tmrMoveTimer.Tick += new System.EventHandler(this.tmrMoveTimer_Tick);
             // 
             // msMainMenu
@@ -65,7 +72,7 @@
             this.helpToolStripMenuItem});
             this.msMainMenu.Location = new System.Drawing.Point(0, 0);
             this.msMainMenu.Name = "msMainMenu";
-            this.msMainMenu.Size = new System.Drawing.Size(494, 24);
+            this.msMainMenu.Size = new System.Drawing.Size(484, 24);
             this.msMainMenu.TabIndex = 0;
             this.msMainMenu.Text = "menuStrip1";
             // 
@@ -105,12 +112,22 @@
             this.resetAntPositionToolStripMenuItem.Text = "Reset Ant position";
             this.resetAntPositionToolStripMenuItem.Click += new System.EventHandler(this.resetAntPositionToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(167, 6);
+            // 
             // chooseCellColorToolStripMenuItem
             // 
             this.chooseCellColorToolStripMenuItem.Name = "chooseCellColorToolStripMenuItem";
             this.chooseCellColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.chooseCellColorToolStripMenuItem.Text = "Choose cell color";
             this.chooseCellColorToolStripMenuItem.Click += new System.EventHandler(this.chooseCellColorToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(167, 6);
             // 
             // exitToolStripMenuItem
             // 
@@ -132,7 +149,7 @@
             // blankToolStripMenuItem
             // 
             this.blankToolStripMenuItem.Name = "blankToolStripMenuItem";
-            this.blankToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.blankToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.blankToolStripMenuItem.Text = "Blank";
             this.blankToolStripMenuItem.Click += new System.EventHandler(this.blankToolStripMenuItem_Click);
             // 
@@ -142,7 +159,7 @@
             this.symmetricToolStripMenuItem,
             this.assymetricToolStripMenuItem});
             this.randomizeToolStripMenuItem.Name = "randomizeToolStripMenuItem";
-            this.randomizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.randomizeToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.randomizeToolStripMenuItem.Text = "Randomize";
             // 
             // symmetricToolStripMenuItem
@@ -164,7 +181,7 @@
             this.patternToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tODOToolStripMenuItem});
             this.patternToolStripMenuItem.Name = "patternToolStripMenuItem";
-            this.patternToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.patternToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.patternToolStripMenuItem.Text = "Pattern";
             // 
             // tODOToolStripMenuItem
@@ -184,7 +201,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -193,21 +210,76 @@
             this.cdColorChooser.Color = System.Drawing.Color.Gray;
             this.cdColorChooser.FullOpen = true;
             // 
-            // toolStripMenuItem2
+            // tbSpeedBar
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(167, 6);
+            this.tbSpeedBar.Location = new System.Drawing.Point(439, 85);
+            this.tbSpeedBar.Maximum = 80;
+            this.tbSpeedBar.Minimum = 1;
+            this.tbSpeedBar.Name = "tbSpeedBar";
+            this.tbSpeedBar.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tbSpeedBar.Size = new System.Drawing.Size(45, 315);
+            this.tbSpeedBar.TabIndex = 1;
+            this.tbSpeedBar.Value = 25;
+            this.tbSpeedBar.Scroll += new System.EventHandler(this.tbSpeedBar_Scroll);
             // 
-            // toolStripMenuItem3
+            // lblSpeedLabel
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(167, 6);
+            this.lblSpeedLabel.AutoSize = true;
+            this.lblSpeedLabel.Location = new System.Drawing.Point(431, 30);
+            this.lblSpeedLabel.Name = "lblSpeedLabel";
+            this.lblSpeedLabel.Size = new System.Drawing.Size(41, 13);
+            this.lblSpeedLabel.TabIndex = 2;
+            this.lblSpeedLabel.Text = "Speed:";
+            // 
+            // lblStepLabel
+            // 
+            this.lblStepLabel.AutoSize = true;
+            this.lblStepLabel.Location = new System.Drawing.Point(436, 404);
+            this.lblStepLabel.Name = "lblStepLabel";
+            this.lblStepLabel.Size = new System.Drawing.Size(32, 13);
+            this.lblStepLabel.TabIndex = 3;
+            this.lblStepLabel.Text = "Step:";
+            // 
+            // tbStepBox
+            // 
+            this.tbStepBox.Location = new System.Drawing.Point(422, 420);
+            this.tbStepBox.Name = "tbStepBox";
+            this.tbStepBox.ReadOnly = true;
+            this.tbStepBox.Size = new System.Drawing.Size(60, 20);
+            this.tbStepBox.TabIndex = 4;
+            this.tbStepBox.Text = "0";
+            this.tbStepBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbSpeedBox
+            // 
+            this.tbSpeedBox.Location = new System.Drawing.Point(434, 46);
+            this.tbSpeedBox.Name = "tbSpeedBox";
+            this.tbSpeedBox.ReadOnly = true;
+            this.tbSpeedBox.Size = new System.Drawing.Size(37, 20);
+            this.tbSpeedBox.TabIndex = 5;
+            this.tbSpeedBox.Text = "25";
+            this.tbSpeedBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblMPS
+            // 
+            this.lblMPS.AutoSize = true;
+            this.lblMPS.Location = new System.Drawing.Point(431, 69);
+            this.lblMPS.Name = "lblMPS";
+            this.lblMPS.Size = new System.Drawing.Size(43, 13);
+            this.lblMPS.TabIndex = 6;
+            this.lblMPS.Text = "(in mps)";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 502);
+            this.ClientSize = new System.Drawing.Size(484, 452);
+            this.Controls.Add(this.lblMPS);
+            this.Controls.Add(this.tbSpeedBox);
+            this.Controls.Add(this.tbStepBox);
+            this.Controls.Add(this.lblStepLabel);
+            this.Controls.Add(this.lblSpeedLabel);
+            this.Controls.Add(this.tbSpeedBar);
             this.Controls.Add(this.msMainMenu);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -218,6 +290,7 @@
             this.Text = "Langton\'s Ant";
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSpeedBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,6 +319,12 @@
         private System.Windows.Forms.ToolStripMenuItem assymetricToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.TrackBar tbSpeedBar;
+        private System.Windows.Forms.Label lblSpeedLabel;
+        private System.Windows.Forms.Label lblStepLabel;
+        private System.Windows.Forms.TextBox tbStepBox;
+        private System.Windows.Forms.TextBox tbSpeedBox;
+        private System.Windows.Forms.Label lblMPS;
     }
 }
 

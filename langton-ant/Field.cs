@@ -6,10 +6,12 @@ namespace langton_ant
 {
     class Field
     {
-        private const int CELL_SIZE = 15;
+        private const int CELL_SIZE = 10;
         public static Color primaryColor = Color.White;
         public static Color secondaryColor = Color.Gray;
         private Color antColor = Color.Red;
+
+        private Ant ant;
 
         private Label[,] map;
         private int mapSize;
@@ -21,7 +23,7 @@ namespace langton_ant
 
             // Starting location
             int horizotal = CELL_SIZE;
-            int vertical = 2 * CELL_SIZE;
+            int vertical = 3 * CELL_SIZE;
 
             // Drawing field
             for (int i = 0; i < size; i++) {
@@ -34,14 +36,21 @@ namespace langton_ant
                     map[i, j].Location = new Point(horizotal, vertical);
                     map[i, j].BorderStyle = BorderStyle.FixedSingle;
                     map[i, j].BackColor = primaryColor;
+                    map[i, j].AutoSize = false;
+                    map[i, j].TextAlign = ContentAlignment.MiddleCenter;
+                    map[i, j].Font = new Font("Arial", 5, FontStyle.Bold);
                     map[i, j].ForeColor = Color.Red;
+                    map[i, j].Click += lblFieldLabel_Click;
+                    map[i, j].Tag = new LabelPos(i, j);
 
+                    // Advancing to next column
                     horizotal += CELL_SIZE;
 
                     // Adding created label to control
                     form.Controls.Add(map[i, j]);
                 }
 
+                // Advancing to next row, resetting column position
                 horizotal = CELL_SIZE;
                 vertical += CELL_SIZE;
             }
@@ -94,7 +103,7 @@ namespace langton_ant
             }
         }
 
-        public void setAnt(int x, int y)
+        public void setAntAt(int x, int y)
         {
             map[x, y].Text = "+";
         }
@@ -115,6 +124,30 @@ namespace langton_ant
         public Color getColor(int x, int y)
         {
             return map[x, y].BackColor;
+        }
+
+        private void lblFieldLabel_Click(object sender, EventArgs e)
+        {
+            Label lbl = (Label)sender;
+            MouseEventArgs me = (MouseEventArgs)e;
+            LabelPos position;
+
+            if (me.Button == System.Windows.Forms.MouseButtons.Left)
+                if (lbl.BackColor == Color.White)
+                    lbl.BackColor = secondaryColor;
+                else
+                    lbl.BackColor = primaryColor;
+            else if (me.Button == System.Windows.Forms.MouseButtons.Right) {
+                position = (LabelPos)lbl.Tag;
+                ant.setXpos(position.getX());
+                ant.setYpos(position.getY());
+            } else
+                return;
+        }
+
+        public void setAnt(Ant ant)
+        {
+            this.ant = ant;
         }
     }
 }

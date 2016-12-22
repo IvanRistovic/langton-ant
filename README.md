@@ -16,5 +16,11 @@ When I finish, I will add an installer or something.
 ## Usage
 To start the animation: File -> Start
 
+Ant is placed by default in the middle of the field. You can set him where ever you like using right click.
+
+You can randomly create a field, or even make one yourself! Use left click to flip colors of the field cells.
+
+Don't like the field cell color? No problem. Choose one yourself! File -> Choose cell colors
+
 ## Known bugs
-Why the need for bugs yet? I have only just started.
+Why the need for bugs yet? I have only just started. Please report if you find any, though.

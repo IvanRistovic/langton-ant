@@ -86,13 +86,7 @@ namespace langton_ant
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            if (System.Windows.Forms.Application.MessageLoop) {
-                // WinForms app
-                System.Windows.Forms.Application.Exit();
-            } else {
-                // Console app
-                System.Environment.Exit(1);
-            }
+            Dispose();
         }
 
         private void AboutForm_Load(object sender, EventArgs e)

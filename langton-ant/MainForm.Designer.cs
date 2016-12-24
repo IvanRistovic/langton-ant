@@ -45,7 +45,7 @@
             this.symmetricToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assymetricToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patternToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tODOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ptn1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cdColorChooser = new System.Windows.Forms.ColorDialog();
@@ -149,7 +149,7 @@
             // blankToolStripMenuItem
             // 
             this.blankToolStripMenuItem.Name = "blankToolStripMenuItem";
-            this.blankToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.blankToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.blankToolStripMenuItem.Text = "Blank";
             this.blankToolStripMenuItem.Click += new System.EventHandler(this.blankToolStripMenuItem_Click);
             // 
@@ -159,7 +159,7 @@
             this.symmetricToolStripMenuItem,
             this.assymetricToolStripMenuItem});
             this.randomizeToolStripMenuItem.Name = "randomizeToolStripMenuItem";
-            this.randomizeToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.randomizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.randomizeToolStripMenuItem.Text = "Randomize";
             // 
             // symmetricToolStripMenuItem
@@ -179,16 +179,17 @@
             // patternToolStripMenuItem
             // 
             this.patternToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tODOToolStripMenuItem});
+            this.ptn1ToolStripMenuItem});
             this.patternToolStripMenuItem.Name = "patternToolStripMenuItem";
-            this.patternToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.patternToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.patternToolStripMenuItem.Text = "Pattern";
             // 
-            // tODOToolStripMenuItem
+            // ptn1ToolStripMenuItem
             // 
-            this.tODOToolStripMenuItem.Name = "tODOToolStripMenuItem";
-            this.tODOToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.tODOToolStripMenuItem.Text = "TODO";
+            this.ptn1ToolStripMenuItem.Name = "ptn1ToolStripMenuItem";
+            this.ptn1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ptn1ToolStripMenuItem.Text = "Pattern 1";
+            this.ptn1ToolStripMenuItem.Click += new System.EventHandler(this.ptn1ToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -305,7 +306,7 @@
         private System.Windows.Forms.ToolStripMenuItem blankToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem randomizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem patternToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tODOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ptn1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;

@@ -23,7 +23,7 @@ namespace langton_ant
         {
             // Form initialization
             InitializeComponent();
-
+            
             // After initializing our form, we create the field
             map = new Field(this, MAP_SIZE);
 
@@ -118,6 +118,13 @@ namespace langton_ant
            map.randomizeFieldSymmetric();
         }
 
+        // Field -> Pattern -> Pattern 1
+        private void ptn1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FieldPattern fp = new FieldPattern("test.txt", MAP_SIZE);
+            map.setFieldFromPattern();
+        }
+
         // About
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -134,5 +141,6 @@ namespace langton_ant
             // Updating speed text box
             tbSpeedBox.Text = tbSpeedBar.Value.ToString();
         }
+
     }
 }

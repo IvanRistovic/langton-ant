@@ -160,5 +160,16 @@ namespace langton_ant
         {
             this.ant = ant;
         }
+
+        public void setFieldFromPattern()
+        {
+            for (int i = 0; i < FieldPattern.size; i++)
+                for (int j = 0; j < FieldPattern.size; j++) {
+                    if (FieldPattern.colored[i, j])
+                        map[i,j].BackColor = secondaryColor;
+                    else
+                        map[i, j].BackColor = primaryColor;
+                }
+        }
     }
 }

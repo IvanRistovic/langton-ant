@@ -72,7 +72,7 @@
             this.helpToolStripMenuItem});
             this.msMainMenu.Location = new System.Drawing.Point(0, 0);
             this.msMainMenu.Name = "msMainMenu";
-            this.msMainMenu.Size = new System.Drawing.Size(484, 24);
+            this.msMainMenu.Size = new System.Drawing.Size(684, 24);
             this.msMainMenu.TabIndex = 0;
             this.msMainMenu.Text = "menuStrip1";
             // 
@@ -149,7 +149,7 @@
             // blankToolStripMenuItem
             // 
             this.blankToolStripMenuItem.Name = "blankToolStripMenuItem";
-            this.blankToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.blankToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.blankToolStripMenuItem.Text = "Blank";
             this.blankToolStripMenuItem.Click += new System.EventHandler(this.blankToolStripMenuItem_Click);
             // 
@@ -159,7 +159,7 @@
             this.symmetricToolStripMenuItem,
             this.assymetricToolStripMenuItem});
             this.randomizeToolStripMenuItem.Name = "randomizeToolStripMenuItem";
-            this.randomizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.randomizeToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.randomizeToolStripMenuItem.Text = "Randomize";
             // 
             // symmetricToolStripMenuItem
@@ -181,13 +181,13 @@
             this.patternToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ptn1ToolStripMenuItem});
             this.patternToolStripMenuItem.Name = "patternToolStripMenuItem";
-            this.patternToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.patternToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.patternToolStripMenuItem.Text = "Pattern";
             // 
             // ptn1ToolStripMenuItem
             // 
             this.ptn1ToolStripMenuItem.Name = "ptn1ToolStripMenuItem";
-            this.ptn1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ptn1ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.ptn1ToolStripMenuItem.Text = "Pattern 1";
             this.ptn1ToolStripMenuItem.Click += new System.EventHandler(this.ptn1ToolStripMenuItem_Click);
             // 
@@ -213,7 +213,7 @@
             // 
             // tbSpeedBar
             // 
-            this.tbSpeedBar.Location = new System.Drawing.Point(439, 85);
+            this.tbSpeedBar.Location = new System.Drawing.Point(635, 92);
             this.tbSpeedBar.Maximum = 80;
             this.tbSpeedBar.Minimum = 1;
             this.tbSpeedBar.Name = "tbSpeedBar";
@@ -226,7 +226,7 @@
             // lblSpeedLabel
             // 
             this.lblSpeedLabel.AutoSize = true;
-            this.lblSpeedLabel.Location = new System.Drawing.Point(431, 30);
+            this.lblSpeedLabel.Location = new System.Drawing.Point(631, 33);
             this.lblSpeedLabel.Name = "lblSpeedLabel";
             this.lblSpeedLabel.Size = new System.Drawing.Size(41, 13);
             this.lblSpeedLabel.TabIndex = 2;
@@ -235,7 +235,7 @@
             // lblStepLabel
             // 
             this.lblStepLabel.AutoSize = true;
-            this.lblStepLabel.Location = new System.Drawing.Point(436, 404);
+            this.lblStepLabel.Location = new System.Drawing.Point(636, 410);
             this.lblStepLabel.Name = "lblStepLabel";
             this.lblStepLabel.Size = new System.Drawing.Size(32, 13);
             this.lblStepLabel.TabIndex = 3;
@@ -243,7 +243,7 @@
             // 
             // tbStepBox
             // 
-            this.tbStepBox.Location = new System.Drawing.Point(422, 420);
+            this.tbStepBox.Location = new System.Drawing.Point(623, 426);
             this.tbStepBox.Name = "tbStepBox";
             this.tbStepBox.ReadOnly = true;
             this.tbStepBox.Size = new System.Drawing.Size(60, 20);
@@ -253,7 +253,7 @@
             // 
             // tbSpeedBox
             // 
-            this.tbSpeedBox.Location = new System.Drawing.Point(434, 46);
+            this.tbSpeedBox.Location = new System.Drawing.Point(634, 49);
             this.tbSpeedBox.Name = "tbSpeedBox";
             this.tbSpeedBox.ReadOnly = true;
             this.tbSpeedBox.Size = new System.Drawing.Size(37, 20);
@@ -264,7 +264,7 @@
             // lblMPS
             // 
             this.lblMPS.AutoSize = true;
-            this.lblMPS.Location = new System.Drawing.Point(431, 69);
+            this.lblMPS.Location = new System.Drawing.Point(631, 72);
             this.lblMPS.Name = "lblMPS";
             this.lblMPS.Size = new System.Drawing.Size(43, 13);
             this.lblMPS.TabIndex = 6;
@@ -274,7 +274,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 452);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(684, 652);
             this.Controls.Add(this.lblMPS);
             this.Controls.Add(this.tbSpeedBox);
             this.Controls.Add(this.tbStepBox);
@@ -287,6 +288,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMainMenu;
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(500, 490);
             this.Name = "MainForm";
             this.Text = "Langton\'s Ant";
             this.msMainMenu.ResumeLayout(false);

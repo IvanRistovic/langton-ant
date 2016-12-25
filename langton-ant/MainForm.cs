@@ -7,7 +7,7 @@ namespace langton_ant
     public partial class MainForm : Form
     {
         // Size of the map
-        private const int MAP_SIZE = 41;
+        private const int MAP_SIZE = 61;
 
         // Our map
         private Field map;
@@ -67,6 +67,7 @@ namespace langton_ant
             stopToolStripMenuItem.Enabled = false;
             fieldToolStripMenuItem.Enabled = true;
             resetAntPositionToolStripMenuItem.Enabled = true;
+            moveCount = 0;
         }
 
         // File -> Reset Ant positon
@@ -141,6 +142,5 @@ namespace langton_ant
             // Updating speed text box
             tbSpeedBox.Text = tbSpeedBar.Value.ToString();
         }
-
     }
 }

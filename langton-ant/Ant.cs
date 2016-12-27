@@ -3,107 +3,107 @@
     class Ant
     {
         // Ant position
-        private int xpos;
-        private int ypos;
+        private int XPos;
+        private int YPos;
 
         // Direction
-        private int direction;
+        private int Direction;
 
         // Map on which the ant is moving
-        private Field map;
-        private int mapSize;
+        private Field Map;
+        private int MapSize;
 
 
         public Ant(Field field, int fieldSize, int xstart, int ystart)
         {
-            map = field;
-            mapSize = fieldSize;
-            xpos = xstart;
-            ypos = ystart;
-            direction = 0;
-            map.setAntAt(xpos, ypos);
+            Map = field;
+            MapSize = fieldSize;
+            XPos = xstart;
+            YPos = ystart;
+            Direction = 0;
+            Map.SetAntAt(XPos, YPos);
         }
 
-        public bool move()
+        public bool Move()
         {
             // At a black square, turn 90° left, flip the color of the square, move forward
             // At a white square, turn 90° right, flip the color of the square, move forward
             
-            if (map.getColor(xpos, ypos) == Field.primaryColor) {
-                if (direction == 0)
-                    direction = 3;
+            if (Map.GetColor(XPos, YPos) == Field.PrimaryColor) {
+                if (Direction == 0)
+                    Direction = 3;
                 else
-                    direction--;
+                    Direction--;
             } else {
-                if (direction == 3)
-                    direction = 0;
+                if (Direction == 3)
+                    Direction = 0;
                 else
-                    direction++;
+                    Direction++;
             }
 
             // Flipping color
-            map.flipColor(xpos, ypos);
+            Map.FlipColor(XPos, YPos);
 
             // Removing ant from current location
-            map.removeAnt(xpos, ypos);
+            Map.RemoveAnt(XPos, YPos);
 
             // Deciding next ant location
-            switch (direction) {
+            switch (Direction) {
                 case 0:
-                    if (ypos == 0)
+                    if (YPos == 0)
                         return false;
-                    ypos--;
+                    YPos--;
                     break;
                 case 1:
-                    if (xpos == mapSize - 1)
+                    if (XPos == MapSize - 1)
                         return false;
-                    xpos++;
+                    XPos++;
                     break;
                 case 2:
-                    if (ypos == mapSize - 1)
+                    if (YPos == MapSize - 1)
                         return false;
-                    ypos++;
+                    YPos++;
                     break;
                 case 3:
-                    if (xpos == 0)
+                    if (XPos == 0)
                         return false;
-                    xpos--;
+                    XPos--;
                     break;
                 default:
                     return false;
             }
 
             // Setting ant at new location
-            map.setAntAt(xpos, ypos);
+            Map.SetAntAt(XPos, YPos);
 
             return true;
         }
 
-        public void resetAntPos()
+        public void ResetAntPos()
         {
             // Removing ant from current cell
-            map.removeAnt(xpos, ypos);
+            Map.RemoveAnt(XPos, YPos);
 
             // Placing ant on default location
-            xpos = ypos = mapSize / 2;
-            map.setAntAt(xpos, ypos);
+            XPos = YPos = MapSize / 2;
+            Map.SetAntAt(XPos, YPos);
 
             // Resetting direction
-            direction = 0;
+            Direction = 0;
         }
 
-        public void setXpos(int x)
+        public void SetXpos(int x)
         {
-            map.removeAnt(xpos, ypos);
-            xpos = x;
-            map.setAntAt(xpos, ypos);
+            Map.RemoveAnt(XPos, YPos);
+            XPos = x;
+            Map.SetAntAt(XPos, YPos);
         }
 
-        public void setYpos(int y)
+        public void SetYpos(int y)
         {
-            map.removeAnt(xpos, ypos);
-            ypos = y;
-            map.setAntAt(xpos, ypos);
+            Map.RemoveAnt(XPos, YPos);
+            YPos = y;
+            Map.SetAntAt(XPos, YPos);
         }
     }
 }

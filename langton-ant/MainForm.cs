@@ -16,7 +16,7 @@ namespace langton_ant
         private Ant langton;
 
         // Move counter
-        private int moveCount = 0;
+        private int MoveCount = 0;
 
 
         public MainForm()
@@ -30,67 +30,69 @@ namespace langton_ant
             // Creating ant
             langton = new Ant(map, MAP_SIZE, MAP_SIZE / 2, MAP_SIZE / 2);
 
-            map.setAnt(langton);
+            map.SetAnt(langton);
         }
+        
 
+#pragma warning disable IDE1006 // Naming Styles
 
         // Timer tick function
         private void tmrMoveTimer_Tick(object sender, EventArgs e)
         {
             // If ant movement fails, stop the animation
-            if (langton.move() == false) {
-                stopToolStripMenuItem.PerformClick();
-                langton.resetAntPos();
+            if (langton.Move() == false) {
+                mnuMainMenuFileStop.PerformClick();
+                langton.ResetAntPos();
                 return;
             }
 
             // Otherwise, update counter
-            moveCount++;
-            tbStepBox.Text = moveCount.ToString();
+            MoveCount++;
+            txtStep.Text = MoveCount.ToString();
         }
 
         // File -> Start
-        private void startToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuMainMenuFileStart_Click(object sender, EventArgs e)
         {
             tmrMoveTimer.Enabled = true;
-            startToolStripMenuItem.Enabled = false;
-            stopToolStripMenuItem.Enabled = true;
-            fieldToolStripMenuItem.Enabled = false;
-            resetAntPositionToolStripMenuItem.Enabled = false;
+            mnuMainMenuFileStart.Enabled = false;
+            mnuMainMenuFileStop.Enabled = true;
+            mnuMainMenuField.Enabled = false;
+            mnuMainMenuFileReset.Enabled = false;
         }
 
         // File -> Stop
-        private void stopToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuMainMenuFileStop_Click(object sender, EventArgs e)
         {
             tmrMoveTimer.Enabled = false;
-            startToolStripMenuItem.Enabled = true;
-            stopToolStripMenuItem.Enabled = false;
-            fieldToolStripMenuItem.Enabled = true;
-            resetAntPositionToolStripMenuItem.Enabled = true;
-            moveCount = 0;
+            mnuMainMenuFileStart.Enabled = true;
+            mnuMainMenuFileStop.Enabled = false;
+            mnuMainMenuField.Enabled = true;
+            mnuMainMenuFileReset.Enabled = true;
+            MoveCount = 0;
         }
 
         // File -> Reset Ant positon
-        private void resetAntPositionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuMainMenuFileReset_Click(object sender, EventArgs e)
         {
-            stopToolStripMenuItem.PerformClick();
-            langton.resetAntPos();
-            moveCount = 0;
+            mnuMainMenuFileStop.PerformClick();
+            langton.ResetAntPos();
+            MoveCount = 0;
         }
 
         // File -> Choose cell color
-        private void chooseCellColorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuMainMenuFileChooseColor_Click(object sender, EventArgs e)
         {
-            DialogResult res = cdColorChooser.ShowDialog();
-            if (res == DialogResult.OK && cdColorChooser.Color != Color.White) {
-                Field.secondaryColor = cdColorChooser.Color;
-                map.clearField();
-                langton.resetAntPos();
+            DialogResult res = clrdChooseColorDialog.ShowDialog();
+            if (res == DialogResult.OK && clrdChooseColorDialog.Color != Color.White) {
+                Field.SecondaryColor = clrdChooseColorDialog.Color;
+                map.ClearField();
+                langton.ResetAntPos();
             }
         }
 
         // File -> Exit
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuMainMenuFileExit_Click(object sender, EventArgs e)
         {
             if (System.Windows.Forms.Application.MessageLoop) {
                 // WinForms app
@@ -102,45 +104,49 @@ namespace langton_ant
         }
 
         // Field -> Blank
-        private void blankToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuMainMenuFieldBlank_Click(object sender, EventArgs e)
         {
-            map.clearField();
+            map.ClearField();
         }
 
         // Field -> Randomize -> Asymmetric
-        private void assymetricToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuMainMenuFieldRandomizeAsymmetric_Click(object sender, EventArgs e)
         {
-            map.randomizeFieldAsymmetric();
+            map.RandomizeFieldAsymmetric();
         }
 
         // Field -> Randomize -> Symmetric
-        private void symmetricToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuMainMenuFieldRandomizeSymmetric_Click(object sender, EventArgs e)
         {
-           map.randomizeFieldSymmetric();
+           map.RandomizeFieldSymmetric();
         }
 
         // Field -> Pattern -> Pattern 1
-        private void ptn1ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuMainMenuFieldPatternPattern1_Click(object sender, EventArgs e)
         {
             FieldPattern fp = new FieldPattern("test.txt", MAP_SIZE);
-            map.setFieldFromPattern();
+            map.SetFieldFromPattern();
         }
 
         // About
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuMainMenuHelpAbout_Click(object sender, EventArgs e)
         {
             AboutForm aboutWindow = new AboutForm();
             aboutWindow.Show();
         }
 
+
         // Speed Bar scroll Action
-        private void tbSpeedBar_Scroll(object sender, EventArgs e)
+        private void tbarSpeed_Scroll(object sender, EventArgs e)
         {
             // Changing speed by changing timer interval
-            tmrMoveTimer.Interval = 1000 / tbSpeedBar.Value;
+            tmrMoveTimer.Interval = 1000 / tbarSpeed.Value;
 
             // Updating speed text box
-            tbSpeedBox.Text = tbSpeedBar.Value.ToString();
+            txtSpeed.Text = tbarSpeed.Value.ToString();
         }
     }
+
+#pragma warning restore IDE1006 // Naming Styles
+
 }

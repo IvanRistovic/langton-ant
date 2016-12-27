@@ -7,28 +7,28 @@ namespace langton_ant
     class Field
     {
         // Field unit size
-        private const int CELL_SIZE = 10;
+        private const int CellSize = 10;
 
         // Primary and secondary field colors, of which secondary can be custom
-        public static Color primaryColor = Color.White;
-        public static Color secondaryColor = Color.Gray;
+        public static Color PrimaryColor = Color.White;
+        public static Color SecondaryColor = Color.Gray;
 
         // Ant that is currently on the field
-        private Ant ant;
+        private Ant Ant;
 
         // Our field map
-        private Label[,] map;
-        private int mapSize;
+        private Label[,] Map;
+        private int MapSize;
 
 
         public Field(Form form, int size)
         {
-            map = new Label[size, size];
-            mapSize = size;
+            Map = new Label[size, size];
+            MapSize = size;
 
             // Starting location
-            int horizotal = CELL_SIZE;
-            int vertical = 3 * CELL_SIZE;
+            int horizotal = CellSize;
+            int vertical = 3 * CellSize;
 
             // Drawing field
             for (int i = 0; i < size; i++) {
@@ -36,106 +36,108 @@ namespace langton_ant
                 for (int j = 0; j < size; j++) {
 
                     // Creating new label with given size and setting attributes
-                    map[i, j] = new Label();
-                    map[i, j].Size = new Size(CELL_SIZE, CELL_SIZE);
-                    map[i, j].Location = new Point(horizotal, vertical);
-                    map[i, j].BorderStyle = BorderStyle.FixedSingle;
-                    map[i, j].BackColor = primaryColor;
-                    map[i, j].AutoSize = false;
-                    map[i, j].TextAlign = ContentAlignment.MiddleCenter;
-                    map[i, j].Font = new Font("Arial", 5, FontStyle.Bold);
-                    map[i, j].ForeColor = Color.Red;
-                    map[i, j].Click += lblFieldLabel_Click;
+                    Map[i, j] = new Label()
+                    {
+                        Size = new Size(CellSize, CellSize),
+                        Location = new Point(horizotal, vertical),
+                        BorderStyle = BorderStyle.FixedSingle,
+                        BackColor = PrimaryColor,
+                        AutoSize = false,
+                        TextAlign = ContentAlignment.MiddleCenter,
+                        Font = new Font("Arial", 5, FontStyle.Bold),
+                        ForeColor = Color.Red
+                    };
+                    Map[i, j].Click += FieldLabel_Click;
 
                     // Saving label position in map
-                    map[i, j].Tag = new LabelPos(i, j);
+                    Map[i, j].Tag = new LabelPos(i, j);
 
                     // Advancing to next column
-                    horizotal += CELL_SIZE;
+                    horizotal += CellSize;
 
                     // Adding created label to control
-                    form.Controls.Add(map[i, j]);
+                    form.Controls.Add(Map[i, j]);
                 }
 
                 // Advancing to next row, resetting column position
-                horizotal = CELL_SIZE;
-                vertical += CELL_SIZE;
+                horizotal = CellSize;
+                vertical += CellSize;
             }
         }
         
-        public void randomizeFieldSymmetric()
+        public void RandomizeFieldSymmetric()
         {
             // For random number generating
             Random rand = new Random();
 
             // We only need to draw one half, the other one is symmetric
-            int limit = mapSize / 2 + 1;
+            int limit = MapSize / 2 + 1;
 
-            for (int i = 0; i < mapSize; i++) {
+            for (int i = 0; i < MapSize; i++) {
                 for (int j = 0; j < limit; j++) {
 
                     // Choosing color for our field randomly from two possible colors
                     if (rand.Next() % 2 == 0)
-                        map[i, j].BackColor = map[i, mapSize - j - 1].BackColor = primaryColor;
+                        Map[i, j].BackColor = Map[i, MapSize - j - 1].BackColor = PrimaryColor;
                     else
-                        map[i, j].BackColor = map[i, mapSize - j - 1].BackColor = secondaryColor;
+                        Map[i, j].BackColor = Map[i, MapSize - j - 1].BackColor = SecondaryColor;
 
                 }
             }
         }
 
-        public void randomizeFieldAsymmetric()
+        public void RandomizeFieldAsymmetric()
         {
             // For random number generating
             Random rand = new Random();
 
-            for (int i = 0; i < mapSize; i++) {
-                for (int j = 0; j < mapSize; j++) {
+            for (int i = 0; i < MapSize; i++) {
+                for (int j = 0; j < MapSize; j++) {
                     
                     // Choosing color for our field randomly from two possible colors
                     if (rand.Next() % 2 == 0)
-                        map[i, j].BackColor = primaryColor;
+                        Map[i, j].BackColor = PrimaryColor;
                     else
-                        map[i, j].BackColor = secondaryColor;
+                        Map[i, j].BackColor = SecondaryColor;
 
                 }
             }
         }
 
-        public void clearField()
+        public void ClearField()
         {
             // Clears field by setting color to primary for each label
-            for (int i = 0; i < mapSize; i++) {
-                for (int j = 0; j < mapSize; j++) {
-                    map[i, j].BackColor = primaryColor;
+            for (int i = 0; i < MapSize; i++) {
+                for (int j = 0; j < MapSize; j++) {
+                    Map[i, j].BackColor = PrimaryColor;
                 }
             }
         }
 
-        public void setAntAt(int x, int y)
+        public void SetAntAt(int x, int y)
         {
-            map[x, y].Text = "+";
+            Map[x, y].Text = "+";
         }
 
-        public void removeAnt(int x, int y)
+        public void RemoveAnt(int x, int y)
         {
-            map[x, y].Text = "";
+            Map[x, y].Text = "";
         }
 
-        public void flipColor(int x, int y)
+        public void FlipColor(int x, int y)
         {
-            if (map[x, y].BackColor == Color.White)
-                map[x, y].BackColor = secondaryColor;
+            if (Map[x, y].BackColor == Color.White)
+                Map[x, y].BackColor = SecondaryColor;
             else
-                map[x, y].BackColor = primaryColor;
+                Map[x, y].BackColor = PrimaryColor;
         }
 
-        public Color getColor(int x, int y)
+        public Color GetColor(int x, int y)
         {
-            return map[x, y].BackColor;
+            return Map[x, y].BackColor;
         }
 
-        private void lblFieldLabel_Click(object sender, EventArgs e)
+        private void FieldLabel_Click(object sender, EventArgs e)
         {
             Label lbl = (Label)sender;
             MouseEventArgs me = (MouseEventArgs)e;
@@ -144,32 +146,33 @@ namespace langton_ant
             if (me.Button == System.Windows.Forms.MouseButtons.Left)
                 // In case of left click, we flip color
                 if (lbl.BackColor == Color.White)
-                    lbl.BackColor = secondaryColor;
+                    lbl.BackColor = SecondaryColor;
                 else
-                    lbl.BackColor = primaryColor;
+                    lbl.BackColor = PrimaryColor;
             else if (me.Button == System.Windows.Forms.MouseButtons.Right) {
                 // In case of right click, set ant at that label position
                 position = (LabelPos)lbl.Tag;
-                ant.setXpos(position.getX());
-                ant.setYpos(position.getY());
+                Ant.SetXpos(position.getX());
+                Ant.SetYpos(position.getY());
             } else
                 return;
         }
 
-        public void setAnt(Ant ant)
+        public void SetAnt(Ant ant)
         {
-            this.ant = ant;
+            this.Ant = ant;
         }
 
-        public void setFieldFromPattern()
+        public void SetFieldFromPattern()
         {
-            for (int i = 0; i < FieldPattern.size; i++)
-                for (int j = 0; j < FieldPattern.size; j++) {
-                    if (FieldPattern.colored[i, j])
-                        map[i,j].BackColor = secondaryColor;
+            for (int i = 0; i < FieldPattern.Size; i++) {
+                for (int j = 0; j < FieldPattern.Size; j++) {
+                    if (FieldPattern.Colored[i, j])
+                        Map[i,j].BackColor = SecondaryColor;
                     else
-                        map[i, j].BackColor = primaryColor;
+                        Map[i, j].BackColor = PrimaryColor;
                 }
+            }
         }
     }
 }

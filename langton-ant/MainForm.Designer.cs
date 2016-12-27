@@ -30,33 +30,33 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tmrMoveTimer = new System.Windows.Forms.Timer(this.components);
-            this.msMainMenu = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetAntPositionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.chooseCellColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fieldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.blankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.randomizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.symmetricToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.assymetricToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.patternToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ptn1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cdColorChooser = new System.Windows.Forms.ColorDialog();
-            this.tbSpeedBar = new System.Windows.Forms.TrackBar();
-            this.lblSpeedLabel = new System.Windows.Forms.Label();
-            this.lblStepLabel = new System.Windows.Forms.Label();
-            this.tbStepBox = new System.Windows.Forms.TextBox();
-            this.tbSpeedBox = new System.Windows.Forms.TextBox();
-            this.lblMPS = new System.Windows.Forms.Label();
-            this.msMainMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbSpeedBar)).BeginInit();
+            this.mnuMainMenu = new System.Windows.Forms.MenuStrip();
+            this.mnuMainMenuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuFileStart = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuFileStop = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuFileReset = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuFileSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMainMenuFileChooseColor = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuFileSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuMainMenuFileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuField = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuFieldBlank = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuFieldRandomize = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuFieldRandomizeSymmetric = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuFieldRandomizeAsymmetric = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuFieldPattern = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuFieldPatternPattern1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMainMenuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.clrdChooseColorDialog = new System.Windows.Forms.ColorDialog();
+            this.tbarSpeed = new System.Windows.Forms.TrackBar();
+            this.lblSpeedTitle = new System.Windows.Forms.Label();
+            this.lblStepTitle = new System.Windows.Forms.Label();
+            this.txtStep = new System.Windows.Forms.TextBox();
+            this.txtSpeed = new System.Windows.Forms.TextBox();
+            this.lblUnitInfo = new System.Windows.Forms.Label();
+            this.mnuMainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbarSpeed)).BeginInit();
             this.SuspendLayout();
             // 
             // tmrMoveTimer
@@ -64,211 +64,211 @@
             this.tmrMoveTimer.Interval = 40;
             this.tmrMoveTimer.Tick += new System.EventHandler(this.tmrMoveTimer_Tick);
             // 
-            // msMainMenu
+            // mnuMainMenu
             // 
-            this.msMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.fieldToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.msMainMenu.Location = new System.Drawing.Point(0, 0);
-            this.msMainMenu.Name = "msMainMenu";
-            this.msMainMenu.Size = new System.Drawing.Size(684, 24);
-            this.msMainMenu.TabIndex = 0;
-            this.msMainMenu.Text = "menuStrip1";
+            this.mnuMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMainMenuFile,
+            this.mnuMainMenuField,
+            this.mnuMainMenuHelp});
+            this.mnuMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mnuMainMenu.Name = "mnuMainMenu";
+            this.mnuMainMenu.Size = new System.Drawing.Size(684, 24);
+            this.mnuMainMenu.TabIndex = 0;
+            this.mnuMainMenu.Text = "menuStrip1";
             // 
-            // fileToolStripMenuItem
+            // mnuMainMenuFile
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startToolStripMenuItem,
-            this.stopToolStripMenuItem,
-            this.resetAntPositionToolStripMenuItem,
-            this.toolStripMenuItem2,
-            this.chooseCellColorToolStripMenuItem,
-            this.toolStripMenuItem3,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.mnuMainMenuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMainMenuFileStart,
+            this.mnuMainMenuFileStop,
+            this.mnuMainMenuFileReset,
+            this.mnuMainMenuFileSeparator1,
+            this.mnuMainMenuFileChooseColor,
+            this.mnuMainMenuFileSeparator2,
+            this.mnuMainMenuFileExit});
+            this.mnuMainMenuFile.Name = "mnuMainMenuFile";
+            this.mnuMainMenuFile.Size = new System.Drawing.Size(37, 20);
+            this.mnuMainMenuFile.Text = "File";
             // 
-            // startToolStripMenuItem
+            // mnuMainMenuFileStart
             // 
-            this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.startToolStripMenuItem.Text = "Start";
-            this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
+            this.mnuMainMenuFileStart.Name = "mnuMainMenuFileStart";
+            this.mnuMainMenuFileStart.Size = new System.Drawing.Size(170, 22);
+            this.mnuMainMenuFileStart.Text = "Start";
+            this.mnuMainMenuFileStart.Click += new System.EventHandler(this.mnuMainMenuFileStart_Click);
             // 
-            // stopToolStripMenuItem
+            // mnuMainMenuFileStop
             // 
-            this.stopToolStripMenuItem.Enabled = false;
-            this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.stopToolStripMenuItem.Text = "Stop";
-            this.stopToolStripMenuItem.Click += new System.EventHandler(this.stopToolStripMenuItem_Click);
+            this.mnuMainMenuFileStop.Enabled = false;
+            this.mnuMainMenuFileStop.Name = "mnuMainMenuFileStop";
+            this.mnuMainMenuFileStop.Size = new System.Drawing.Size(170, 22);
+            this.mnuMainMenuFileStop.Text = "Stop";
+            this.mnuMainMenuFileStop.Click += new System.EventHandler(this.mnuMainMenuFileStop_Click);
             // 
-            // resetAntPositionToolStripMenuItem
+            // mnuMainMenuFileReset
             // 
-            this.resetAntPositionToolStripMenuItem.Name = "resetAntPositionToolStripMenuItem";
-            this.resetAntPositionToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.resetAntPositionToolStripMenuItem.Text = "Reset Ant position";
-            this.resetAntPositionToolStripMenuItem.Click += new System.EventHandler(this.resetAntPositionToolStripMenuItem_Click);
+            this.mnuMainMenuFileReset.Name = "mnuMainMenuFileReset";
+            this.mnuMainMenuFileReset.Size = new System.Drawing.Size(170, 22);
+            this.mnuMainMenuFileReset.Text = "Reset Ant position";
+            this.mnuMainMenuFileReset.Click += new System.EventHandler(this.mnuMainMenuFileReset_Click);
             // 
-            // toolStripMenuItem2
+            // mnuMainMenuFileSeparator1
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(167, 6);
+            this.mnuMainMenuFileSeparator1.Name = "mnuMainMenuFileSeparator1";
+            this.mnuMainMenuFileSeparator1.Size = new System.Drawing.Size(167, 6);
             // 
-            // chooseCellColorToolStripMenuItem
+            // mnuMainMenuFileChooseColor
             // 
-            this.chooseCellColorToolStripMenuItem.Name = "chooseCellColorToolStripMenuItem";
-            this.chooseCellColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.chooseCellColorToolStripMenuItem.Text = "Choose cell color";
-            this.chooseCellColorToolStripMenuItem.Click += new System.EventHandler(this.chooseCellColorToolStripMenuItem_Click);
+            this.mnuMainMenuFileChooseColor.Name = "mnuMainMenuFileChooseColor";
+            this.mnuMainMenuFileChooseColor.Size = new System.Drawing.Size(170, 22);
+            this.mnuMainMenuFileChooseColor.Text = "Choose cell color";
+            this.mnuMainMenuFileChooseColor.Click += new System.EventHandler(this.mnuMainMenuFileChooseColor_Click);
             // 
-            // toolStripMenuItem3
+            // mnuMainMenuFileSeparator2
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(167, 6);
+            this.mnuMainMenuFileSeparator2.Name = "mnuMainMenuFileSeparator2";
+            this.mnuMainMenuFileSeparator2.Size = new System.Drawing.Size(167, 6);
             // 
-            // exitToolStripMenuItem
+            // mnuMainMenuFileExit
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.mnuMainMenuFileExit.Name = "mnuMainMenuFileExit";
+            this.mnuMainMenuFileExit.Size = new System.Drawing.Size(170, 22);
+            this.mnuMainMenuFileExit.Text = "Exit";
+            this.mnuMainMenuFileExit.Click += new System.EventHandler(this.mnuMainMenuFileExit_Click);
             // 
-            // fieldToolStripMenuItem
+            // mnuMainMenuField
             // 
-            this.fieldToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.blankToolStripMenuItem,
-            this.randomizeToolStripMenuItem,
-            this.patternToolStripMenuItem});
-            this.fieldToolStripMenuItem.Name = "fieldToolStripMenuItem";
-            this.fieldToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.fieldToolStripMenuItem.Text = "Field";
+            this.mnuMainMenuField.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMainMenuFieldBlank,
+            this.mnuMainMenuFieldRandomize,
+            this.mnuMainMenuFieldPattern});
+            this.mnuMainMenuField.Name = "mnuMainMenuField";
+            this.mnuMainMenuField.Size = new System.Drawing.Size(44, 20);
+            this.mnuMainMenuField.Text = "Field";
             // 
-            // blankToolStripMenuItem
+            // mnuMainMenuFieldBlank
             // 
-            this.blankToolStripMenuItem.Name = "blankToolStripMenuItem";
-            this.blankToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.blankToolStripMenuItem.Text = "Blank";
-            this.blankToolStripMenuItem.Click += new System.EventHandler(this.blankToolStripMenuItem_Click);
+            this.mnuMainMenuFieldBlank.Name = "mnuMainMenuFieldBlank";
+            this.mnuMainMenuFieldBlank.Size = new System.Drawing.Size(133, 22);
+            this.mnuMainMenuFieldBlank.Text = "Blank";
+            this.mnuMainMenuFieldBlank.Click += new System.EventHandler(this.mnuMainMenuFieldBlank_Click);
             // 
-            // randomizeToolStripMenuItem
+            // mnuMainMenuFieldRandomize
             // 
-            this.randomizeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.symmetricToolStripMenuItem,
-            this.assymetricToolStripMenuItem});
-            this.randomizeToolStripMenuItem.Name = "randomizeToolStripMenuItem";
-            this.randomizeToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.randomizeToolStripMenuItem.Text = "Randomize";
+            this.mnuMainMenuFieldRandomize.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMainMenuFieldRandomizeSymmetric,
+            this.mnuMainMenuFieldRandomizeAsymmetric});
+            this.mnuMainMenuFieldRandomize.Name = "mnuMainMenuFieldRandomize";
+            this.mnuMainMenuFieldRandomize.Size = new System.Drawing.Size(133, 22);
+            this.mnuMainMenuFieldRandomize.Text = "Randomize";
             // 
-            // symmetricToolStripMenuItem
+            // mnuMainMenuFieldRandomizeSymmetric
             // 
-            this.symmetricToolStripMenuItem.Name = "symmetricToolStripMenuItem";
-            this.symmetricToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.symmetricToolStripMenuItem.Text = "Symmetric";
-            this.symmetricToolStripMenuItem.Click += new System.EventHandler(this.symmetricToolStripMenuItem_Click);
+            this.mnuMainMenuFieldRandomizeSymmetric.Name = "mnuMainMenuFieldRandomizeSymmetric";
+            this.mnuMainMenuFieldRandomizeSymmetric.Size = new System.Drawing.Size(138, 22);
+            this.mnuMainMenuFieldRandomizeSymmetric.Text = "Symmetric";
+            this.mnuMainMenuFieldRandomizeSymmetric.Click += new System.EventHandler(this.mnuMainMenuFieldRandomizeSymmetric_Click);
             // 
-            // assymetricToolStripMenuItem
+            // mnuMainMenuFieldRandomizeAsymmetric
             // 
-            this.assymetricToolStripMenuItem.Name = "assymetricToolStripMenuItem";
-            this.assymetricToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.assymetricToolStripMenuItem.Text = "Asymmetric";
-            this.assymetricToolStripMenuItem.Click += new System.EventHandler(this.assymetricToolStripMenuItem_Click);
+            this.mnuMainMenuFieldRandomizeAsymmetric.Name = "mnuMainMenuFieldRandomizeAsymmetric";
+            this.mnuMainMenuFieldRandomizeAsymmetric.Size = new System.Drawing.Size(138, 22);
+            this.mnuMainMenuFieldRandomizeAsymmetric.Text = "Asymmetric";
+            this.mnuMainMenuFieldRandomizeAsymmetric.Click += new System.EventHandler(this.mnuMainMenuFieldRandomizeAsymmetric_Click);
             // 
-            // patternToolStripMenuItem
+            // mnuMainMenuFieldPattern
             // 
-            this.patternToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ptn1ToolStripMenuItem});
-            this.patternToolStripMenuItem.Name = "patternToolStripMenuItem";
-            this.patternToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.patternToolStripMenuItem.Text = "Pattern";
+            this.mnuMainMenuFieldPattern.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMainMenuFieldPatternPattern1});
+            this.mnuMainMenuFieldPattern.Name = "mnuMainMenuFieldPattern";
+            this.mnuMainMenuFieldPattern.Size = new System.Drawing.Size(133, 22);
+            this.mnuMainMenuFieldPattern.Text = "Pattern";
             // 
-            // ptn1ToolStripMenuItem
+            // mnuMainMenuFieldPatternPattern1
             // 
-            this.ptn1ToolStripMenuItem.Name = "ptn1ToolStripMenuItem";
-            this.ptn1ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.ptn1ToolStripMenuItem.Text = "Pattern 1";
-            this.ptn1ToolStripMenuItem.Click += new System.EventHandler(this.ptn1ToolStripMenuItem_Click);
+            this.mnuMainMenuFieldPatternPattern1.Name = "mnuMainMenuFieldPatternPattern1";
+            this.mnuMainMenuFieldPatternPattern1.Size = new System.Drawing.Size(121, 22);
+            this.mnuMainMenuFieldPatternPattern1.Text = "Pattern 1";
+            this.mnuMainMenuFieldPatternPattern1.Click += new System.EventHandler(this.mnuMainMenuFieldPatternPattern1_Click);
             // 
-            // helpToolStripMenuItem
+            // mnuMainMenuHelp
             // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.mnuMainMenuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuMainMenuHelpAbout});
+            this.mnuMainMenuHelp.Name = "mnuMainMenuHelp";
+            this.mnuMainMenuHelp.Size = new System.Drawing.Size(44, 20);
+            this.mnuMainMenuHelp.Text = "Help";
             // 
-            // aboutToolStripMenuItem
+            // mnuMainMenuHelpAbout
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.mnuMainMenuHelpAbout.Name = "mnuMainMenuHelpAbout";
+            this.mnuMainMenuHelpAbout.Size = new System.Drawing.Size(107, 22);
+            this.mnuMainMenuHelpAbout.Text = "About";
+            this.mnuMainMenuHelpAbout.Click += new System.EventHandler(this.mnuMainMenuHelpAbout_Click);
             // 
-            // cdColorChooser
+            // clrdChooseColorDialog
             // 
-            this.cdColorChooser.Color = System.Drawing.Color.Gray;
-            this.cdColorChooser.FullOpen = true;
+            this.clrdChooseColorDialog.Color = System.Drawing.Color.Gray;
+            this.clrdChooseColorDialog.FullOpen = true;
             // 
-            // tbSpeedBar
+            // tbarSpeed
             // 
-            this.tbSpeedBar.Location = new System.Drawing.Point(635, 92);
-            this.tbSpeedBar.Maximum = 80;
-            this.tbSpeedBar.Minimum = 1;
-            this.tbSpeedBar.Name = "tbSpeedBar";
-            this.tbSpeedBar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tbSpeedBar.Size = new System.Drawing.Size(45, 315);
-            this.tbSpeedBar.TabIndex = 1;
-            this.tbSpeedBar.Value = 25;
-            this.tbSpeedBar.Scroll += new System.EventHandler(this.tbSpeedBar_Scroll);
+            this.tbarSpeed.Location = new System.Drawing.Point(635, 92);
+            this.tbarSpeed.Maximum = 80;
+            this.tbarSpeed.Minimum = 1;
+            this.tbarSpeed.Name = "tbarSpeed";
+            this.tbarSpeed.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tbarSpeed.Size = new System.Drawing.Size(45, 315);
+            this.tbarSpeed.TabIndex = 1;
+            this.tbarSpeed.Value = 25;
+            this.tbarSpeed.Scroll += new System.EventHandler(this.tbarSpeed_Scroll);
             // 
-            // lblSpeedLabel
+            // lblSpeedTitle
             // 
-            this.lblSpeedLabel.AutoSize = true;
-            this.lblSpeedLabel.Location = new System.Drawing.Point(631, 33);
-            this.lblSpeedLabel.Name = "lblSpeedLabel";
-            this.lblSpeedLabel.Size = new System.Drawing.Size(41, 13);
-            this.lblSpeedLabel.TabIndex = 2;
-            this.lblSpeedLabel.Text = "Speed:";
+            this.lblSpeedTitle.AutoSize = true;
+            this.lblSpeedTitle.Location = new System.Drawing.Point(631, 33);
+            this.lblSpeedTitle.Name = "lblSpeedTitle";
+            this.lblSpeedTitle.Size = new System.Drawing.Size(41, 13);
+            this.lblSpeedTitle.TabIndex = 2;
+            this.lblSpeedTitle.Text = "Speed:";
             // 
-            // lblStepLabel
+            // lblStepTitle
             // 
-            this.lblStepLabel.AutoSize = true;
-            this.lblStepLabel.Location = new System.Drawing.Point(636, 410);
-            this.lblStepLabel.Name = "lblStepLabel";
-            this.lblStepLabel.Size = new System.Drawing.Size(32, 13);
-            this.lblStepLabel.TabIndex = 3;
-            this.lblStepLabel.Text = "Step:";
+            this.lblStepTitle.AutoSize = true;
+            this.lblStepTitle.Location = new System.Drawing.Point(636, 410);
+            this.lblStepTitle.Name = "lblStepTitle";
+            this.lblStepTitle.Size = new System.Drawing.Size(32, 13);
+            this.lblStepTitle.TabIndex = 3;
+            this.lblStepTitle.Text = "Step:";
             // 
-            // tbStepBox
+            // txtStep
             // 
-            this.tbStepBox.Location = new System.Drawing.Point(623, 426);
-            this.tbStepBox.Name = "tbStepBox";
-            this.tbStepBox.ReadOnly = true;
-            this.tbStepBox.Size = new System.Drawing.Size(60, 20);
-            this.tbStepBox.TabIndex = 4;
-            this.tbStepBox.Text = "0";
-            this.tbStepBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtStep.Location = new System.Drawing.Point(623, 426);
+            this.txtStep.Name = "txtStep";
+            this.txtStep.ReadOnly = true;
+            this.txtStep.Size = new System.Drawing.Size(60, 20);
+            this.txtStep.TabIndex = 4;
+            this.txtStep.Text = "0";
+            this.txtStep.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbSpeedBox
+            // txtSpeed
             // 
-            this.tbSpeedBox.Location = new System.Drawing.Point(634, 49);
-            this.tbSpeedBox.Name = "tbSpeedBox";
-            this.tbSpeedBox.ReadOnly = true;
-            this.tbSpeedBox.Size = new System.Drawing.Size(37, 20);
-            this.tbSpeedBox.TabIndex = 5;
-            this.tbSpeedBox.Text = "25";
-            this.tbSpeedBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSpeed.Location = new System.Drawing.Point(634, 49);
+            this.txtSpeed.Name = "txtSpeed";
+            this.txtSpeed.ReadOnly = true;
+            this.txtSpeed.Size = new System.Drawing.Size(37, 20);
+            this.txtSpeed.TabIndex = 5;
+            this.txtSpeed.Text = "25";
+            this.txtSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lblMPS
+            // lblUnitInfo
             // 
-            this.lblMPS.AutoSize = true;
-            this.lblMPS.Location = new System.Drawing.Point(631, 72);
-            this.lblMPS.Name = "lblMPS";
-            this.lblMPS.Size = new System.Drawing.Size(43, 13);
-            this.lblMPS.TabIndex = 6;
-            this.lblMPS.Text = "(in mps)";
+            this.lblUnitInfo.AutoSize = true;
+            this.lblUnitInfo.Location = new System.Drawing.Point(631, 72);
+            this.lblUnitInfo.Name = "lblUnitInfo";
+            this.lblUnitInfo.Size = new System.Drawing.Size(43, 13);
+            this.lblUnitInfo.TabIndex = 6;
+            this.lblUnitInfo.Text = "(in mps)";
             // 
             // MainForm
             // 
@@ -276,24 +276,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(684, 652);
-            this.Controls.Add(this.lblMPS);
-            this.Controls.Add(this.tbSpeedBox);
-            this.Controls.Add(this.tbStepBox);
-            this.Controls.Add(this.lblStepLabel);
-            this.Controls.Add(this.lblSpeedLabel);
-            this.Controls.Add(this.tbSpeedBar);
-            this.Controls.Add(this.msMainMenu);
+            this.Controls.Add(this.lblUnitInfo);
+            this.Controls.Add(this.txtSpeed);
+            this.Controls.Add(this.txtStep);
+            this.Controls.Add(this.lblStepTitle);
+            this.Controls.Add(this.lblSpeedTitle);
+            this.Controls.Add(this.tbarSpeed);
+            this.Controls.Add(this.mnuMainMenu);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.msMainMenu;
+            this.MainMenuStrip = this.mnuMainMenu;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 490);
             this.Name = "MainForm";
             this.Text = "Langton\'s Ant";
-            this.msMainMenu.ResumeLayout(false);
-            this.msMainMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbSpeedBar)).EndInit();
+            this.mnuMainMenu.ResumeLayout(false);
+            this.mnuMainMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbarSpeed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,32 +302,31 @@
         #endregion
 
         private System.Windows.Forms.Timer tmrMoveTimer;
-        private System.Windows.Forms.MenuStrip msMainMenu;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fieldToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem blankToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem randomizeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem patternToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ptn1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem chooseCellColorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ColorDialog cdColorChooser;
-        private System.Windows.Forms.ToolStripMenuItem resetAntPositionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem symmetricToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem assymetricToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
-        private System.Windows.Forms.TrackBar tbSpeedBar;
-        private System.Windows.Forms.Label lblSpeedLabel;
-        private System.Windows.Forms.Label lblStepLabel;
-        private System.Windows.Forms.TextBox tbStepBox;
-        private System.Windows.Forms.TextBox tbSpeedBox;
-        private System.Windows.Forms.Label lblMPS;
+        private System.Windows.Forms.MenuStrip mnuMainMenu;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuFile;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuField;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuFieldBlank;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuFieldRandomize;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuFieldPattern;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuFieldPatternPattern1;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuHelp;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuHelpAbout;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuFileStart;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuFileStop;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuFileExit;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuFileChooseColor;
+        private System.Windows.Forms.ColorDialog clrdChooseColorDialog;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuFileReset;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuFieldRandomizeSymmetric;
+        private System.Windows.Forms.ToolStripMenuItem mnuMainMenuFieldRandomizeAsymmetric;
+        private System.Windows.Forms.ToolStripSeparator mnuMainMenuFileSeparator1;
+        private System.Windows.Forms.ToolStripSeparator mnuMainMenuFileSeparator2;
+        private System.Windows.Forms.TrackBar tbarSpeed;
+        private System.Windows.Forms.Label lblSpeedTitle;
+        private System.Windows.Forms.Label lblStepTitle;
+        private System.Windows.Forms.TextBox txtStep;
+        private System.Windows.Forms.TextBox txtSpeed;
+        private System.Windows.Forms.Label lblUnitInfo;
     }
 }
 

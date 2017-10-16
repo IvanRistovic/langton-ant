@@ -27,20 +27,15 @@ namespace LangtonAnt
             Map = new Label[size, size];
             MapSize = size;
 
-            // Starting location
-            int horizotal = CellSize;
-            int vertical = 3 * CellSize;
-
+            object _lock = new object();
+            
             // Drawing field
-            for (int i = 0; i < size; i++) {
-
-                for (int j = 0; j < size; j++) {
-
+            Parallel.For(0, size, i => {
+                Parallel.For(0, size, j => {
                     // Creating new label with given size and setting attributes
-                    Map[i, j] = new Label()
-                    {
+                    Map[i, j] = new Label() {
                         Size = new Size(CellSize, CellSize),
-                        Location = new Point(horizotal, vertical),
+                        Location = new Point((j + 1) * CellSize, (i + 3) * CellSize),
                         BorderStyle = BorderStyle.FixedSingle,
                         BackColor = PrimaryColor,
                         AutoSize = false,
@@ -53,17 +48,12 @@ namespace LangtonAnt
                     // Saving label position in map
                     Map[i, j].Tag = new LabelPos(i, j);
 
-                    // Advancing to next column
-                    horizotal += CellSize;
-
-                    // Adding created label to control
-                    form.Controls.Add(Map[i, j]);
-                }
-
-                // Advancing to next row, resetting column position
-                horizotal = CellSize;
-                vertical += CellSize;
-            }
+                    lock (_lock) {
+                        // Adding created label to control
+                        form.Controls.Add(Map[i, j]);
+                    }
+                });
+            });
         }
         
         public void RandomizeFieldSymmetric()

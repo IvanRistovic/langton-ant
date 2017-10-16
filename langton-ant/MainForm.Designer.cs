@@ -87,8 +87,8 @@
             this.mnuMainMenuFileSeparator2,
             this.mnuMainMenuFileExit});
             this.mnuMainMenuFile.Name = "mnuMainMenuFile";
-            this.mnuMainMenuFile.Size = new System.Drawing.Size(37, 20);
-            this.mnuMainMenuFile.Text = "File";
+            this.mnuMainMenuFile.Size = new System.Drawing.Size(50, 20);
+            this.mnuMainMenuFile.Text = "Game";
             // 
             // mnuMainMenuFileStart
             // 
@@ -149,8 +149,8 @@
             // mnuMainMenuFieldBlank
             // 
             this.mnuMainMenuFieldBlank.Name = "mnuMainMenuFieldBlank";
-            this.mnuMainMenuFieldBlank.Size = new System.Drawing.Size(133, 22);
-            this.mnuMainMenuFieldBlank.Text = "Blank";
+            this.mnuMainMenuFieldBlank.Size = new System.Drawing.Size(152, 22);
+            this.mnuMainMenuFieldBlank.Text = "Clear";
             this.mnuMainMenuFieldBlank.Click += new System.EventHandler(this.mnuMainMenuFieldBlank_Click);
             // 
             // mnuMainMenuFieldRandomize
@@ -159,7 +159,7 @@
             this.mnuMainMenuFieldRandomizeSymmetric,
             this.mnuMainMenuFieldRandomizeAsymmetric});
             this.mnuMainMenuFieldRandomize.Name = "mnuMainMenuFieldRandomize";
-            this.mnuMainMenuFieldRandomize.Size = new System.Drawing.Size(133, 22);
+            this.mnuMainMenuFieldRandomize.Size = new System.Drawing.Size(152, 22);
             this.mnuMainMenuFieldRandomize.Text = "Randomize";
             // 
             // mnuMainMenuFieldRandomizeSymmetric
@@ -181,7 +181,7 @@
             this.mnuMainMenuFieldPattern.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuMainMenuFieldPatternPattern1});
             this.mnuMainMenuFieldPattern.Name = "mnuMainMenuFieldPattern";
-            this.mnuMainMenuFieldPattern.Size = new System.Drawing.Size(133, 22);
+            this.mnuMainMenuFieldPattern.Size = new System.Drawing.Size(152, 22);
             this.mnuMainMenuFieldPattern.Text = "Pattern";
             // 
             // mnuMainMenuFieldPatternPattern1

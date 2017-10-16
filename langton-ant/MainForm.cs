@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LangtonAnt
@@ -104,21 +105,21 @@ namespace LangtonAnt
         }
 
         // Field -> Blank
-        private void mnuMainMenuFieldBlank_Click(object sender, EventArgs e)
+        private async void mnuMainMenuFieldBlank_Click(object sender, EventArgs e)
         {
-            map.ClearField();
+            await Task.Run(() => map.ClearField());
         }
 
         // Field -> Randomize -> Asymmetric
-        private void mnuMainMenuFieldRandomizeAsymmetric_Click(object sender, EventArgs e)
+        private async void mnuMainMenuFieldRandomizeAsymmetric_Click(object sender, EventArgs e)
         {
-            map.RandomizeFieldAsymmetric();
+            await Task.Run(() => map.RandomizeFieldAsymmetric());
         }
 
         // Field -> Randomize -> Symmetric
-        private void mnuMainMenuFieldRandomizeSymmetric_Click(object sender, EventArgs e)
+        private async void mnuMainMenuFieldRandomizeSymmetric_Click(object sender, EventArgs e)
         {
-           map.RandomizeFieldSymmetric();
+            await Task.Run(() => map.RandomizeFieldSymmetric());
         }
 
         // Field -> Pattern -> Pattern 1
@@ -135,7 +136,6 @@ namespace LangtonAnt
             aboutWindow.Show();
         }
 
-
         // Speed Bar scroll Action
         private void tbarSpeed_Scroll(object sender, EventArgs e)
         {
@@ -145,6 +145,7 @@ namespace LangtonAnt
             // Updating speed text box
             txtSpeed.Text = tbarSpeed.Value.ToString();
         }
+
     }
 
 #pragma warning restore IDE1006 // Naming Styles

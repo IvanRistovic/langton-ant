@@ -73,18 +73,14 @@ namespace langton_ant
 
             // We only need to draw one half, the other one is symmetric
             int limit = MapSize / 2 + 1;
-
-            for (int i = 0; i < MapSize; i++) {
-                for (int j = 0; j < limit; j++) {
-
-                    // Choosing color for our field randomly from two possible colors
+            Parallel.For(0, MapSize, i => {
+                Parallel.For(0, MapSize, j => {
                     if (rand.Next() % 2 == 0)
                         Map[i, j].BackColor = Map[i, MapSize - j - 1].BackColor = PrimaryColor;
                     else
                         Map[i, j].BackColor = Map[i, MapSize - j - 1].BackColor = SecondaryColor;
-
-                }
-            }
+                });
+            });
         }
 
         public void RandomizeFieldAsymmetric()

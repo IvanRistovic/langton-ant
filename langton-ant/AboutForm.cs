@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace langton_ant
+namespace LangtonAnt
 {
     partial class AboutForm : Form
     {

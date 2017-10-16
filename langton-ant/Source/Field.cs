@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Threading.Tasks;
 
-namespace langton_ant
+namespace LangtonAnt
 {
     class Field
     {

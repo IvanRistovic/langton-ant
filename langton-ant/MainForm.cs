@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace langton_ant
+namespace LangtonAnt
 {
     public partial class MainForm : Form
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace langton_ant.Properties {
+namespace LangtonAnt.Properties {
     using System;
     
     

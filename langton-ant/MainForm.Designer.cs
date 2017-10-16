@@ -1,4 +1,4 @@
-﻿namespace langton_ant
+﻿namespace LangtonAnt
 {
     partial class MainForm
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace langton_ant
+namespace LangtonAnt
 {
 
     /* This class is used to save position for each label in field array */

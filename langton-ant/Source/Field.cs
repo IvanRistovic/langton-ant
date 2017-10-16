@@ -137,13 +137,13 @@ namespace LangtonAnt
             MouseEventArgs me = (MouseEventArgs)e;
             LabelPos position;
 
-            if (me.Button == System.Windows.Forms.MouseButtons.Left)
+            if (me.Button == MouseButtons.Left)
                 // In case of left click, we flip color
                 if (lbl.BackColor == Color.White)
                     lbl.BackColor = SecondaryColor;
                 else
                     lbl.BackColor = PrimaryColor;
-            else if (me.Button == System.Windows.Forms.MouseButtons.Right) {
+            else if (me.Button == MouseButtons.Right) {
                 // In case of right click, set ant at that label position
                 position = (LabelPos)lbl.Tag;
                 Ant.SetXpos(position.getX());

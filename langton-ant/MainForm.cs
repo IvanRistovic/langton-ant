@@ -94,12 +94,12 @@ namespace langton_ant
         // File -> Exit
         private void mnuMainMenuFileExit_Click(object sender, EventArgs e)
         {
-            if (System.Windows.Forms.Application.MessageLoop) {
+            if (Application.MessageLoop) {
                 // WinForms app
-                System.Windows.Forms.Application.Exit();
+                Application.Exit();
             } else {
                 // Console app
-                System.Environment.Exit(1);
+                Environment.Exit(1);
             }
         }
 

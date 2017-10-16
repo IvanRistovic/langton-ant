@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Threading.Tasks;
 
 namespace langton_ant
 {
@@ -90,18 +91,15 @@ namespace langton_ant
         {
             // For random number generating
             Random rand = new Random();
-
-            for (int i = 0; i < MapSize; i++) {
-                for (int j = 0; j < MapSize; j++) {
-                    
-                    // Choosing color for our field randomly from two possible colors
+            
+            Parallel.For(0, MapSize, i => {
+                Parallel.For(0, MapSize, j => {
                     if (rand.Next() % 2 == 0)
                         Map[i, j].BackColor = PrimaryColor;
                     else
                         Map[i, j].BackColor = SecondaryColor;
-
-                }
-            }
+                });
+            });
         }
 
         public void ClearField()

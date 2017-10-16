@@ -105,11 +105,11 @@ namespace langton_ant
         public void ClearField()
         {
             // Clears field by setting color to primary for each label
-            for (int i = 0; i < MapSize; i++) {
-                for (int j = 0; j < MapSize; j++) {
+            Parallel.For(0, MapSize, i => {
+                Parallel.For(0, MapSize, j => {
                     Map[i, j].BackColor = PrimaryColor;
-                }
-            }
+                });
+            });
         }
 
         public void SetAntAt(int x, int y)

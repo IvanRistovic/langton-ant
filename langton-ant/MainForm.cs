@@ -85,7 +85,7 @@ namespace LangtonAnt
         {
             DialogResult res = clrdChooseColorDialog.ShowDialog();
             if (res == DialogResult.OK && clrdChooseColorDialog.Color != Color.White) {
-                Field.SecondaryColor = clrdChooseColorDialog.Color;
+                map.SetSecondaryColor(clrdChooseColorDialog.Color);
                 map.ClearField();
                 langton.ResetAntPos();
             }

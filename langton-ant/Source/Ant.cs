@@ -29,7 +29,7 @@
             // At a black square, turn 90° left, flip the color of the square, move forward
             // At a white square, turn 90° right, flip the color of the square, move forward
             
-            if (Map.GetColor(XPos, YPos) == Field.PrimaryColor) {
+            if (Map.GetColor(XPos, YPos) == Map.PrimaryColor) {
                 if (Direction == 0)
                     Direction = 3;
                 else

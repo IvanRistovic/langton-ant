@@ -11,8 +11,8 @@ namespace LangtonAnt
         private const int CellSize = 10;
 
         // Primary and secondary field colors, of which secondary can be custom
-        public static Color PrimaryColor = Color.White;
-        public static Color SecondaryColor = Color.Gray;
+        public Color PrimaryColor { get; private set; }
+        public Color SecondaryColor { get; private set; }
 
         // Ant that is currently on the field
         private Ant Ant;
@@ -24,6 +24,9 @@ namespace LangtonAnt
 
         public Field(Form form, int size)
         {
+            PrimaryColor = Color.White;
+            SecondaryColor = Color.Gray;
+
             Map = new Label[size, size];
             MapSize = size;
 
@@ -119,6 +122,11 @@ namespace LangtonAnt
         public Color GetColor(int x, int y)
         {
             return Map[x, y].BackColor;
+        }
+
+        public void SetSecondaryColor(Color color)
+        {
+            SecondaryColor = color;
         }
 
         private void FieldLabel_Click(object sender, EventArgs e)

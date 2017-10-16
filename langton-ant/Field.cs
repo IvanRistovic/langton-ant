@@ -157,16 +157,16 @@ namespace langton_ant
             this.Ant = ant;
         }
 
-        public void SetFieldFromPattern()
+        public void SetFieldFromPattern(FieldPattern fp)
         {
-            for (int i = 0; i < FieldPattern.Size; i++) {
-                for (int j = 0; j < FieldPattern.Size; j++) {
-                    if (FieldPattern.Colored[i, j])
-                        Map[i,j].BackColor = SecondaryColor;
+            Parallel.For(0, fp.Size, i => {
+                Parallel.For(0, fp.Size, j => {
+                    if (fp.Colored[i, j])
+                        Map[i, j].BackColor = SecondaryColor;
                     else
                         Map[i, j].BackColor = PrimaryColor;
-                }
-            }
+                });
+            });
         }
     }
 }

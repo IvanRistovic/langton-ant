@@ -125,7 +125,7 @@ namespace langton_ant
         private void mnuMainMenuFieldPatternPattern1_Click(object sender, EventArgs e)
         {
             FieldPattern fp = new FieldPattern("test.txt", MAP_SIZE);
-            map.SetFieldFromPattern();
+            map.SetFieldFromPattern(fp);
         }
 
         // About
